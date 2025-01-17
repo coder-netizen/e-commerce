@@ -1,6 +1,7 @@
-const wishlistSchema = require('../models/wishlistSchema');
+const wishlistSchema = require('../models/wishlistSchema.js');
 
-const productSchema = require('../models/productSchema');
+
+const productSchema = require('../models/productSchema.js');
 const userSchema = require('../models/userSchema');
 const jsonwebtoken = require('../middlewares/jsonwebtoken.js');
 

@@ -10,7 +10,10 @@ const {addtowishlist, removefromwishlist, getwishlist} = require('../src/control
 const jsonwebtoken = require('../src/middlewares/jsonwebtoken.js');
 const{addproducttocart, viewCart} = require('../src/controllers/cartmodule.js');
 const verifyToken = require('../src/middlewares/jsonwebtoken.js');
-const{placeorder} = require('../src/controllers/ordermodule.js');
+const{placeorder, vieworder, cancelorder} = require('../src/controllers/ordermodule.js');
+const { verify } = require('crypto');
+const { getprofile, updateprofile, updatepassword, deleteaccount } = require('../src/controllers/profilemanagementmodule.js');
+const { getproductdetails } = require('../src/controllers/userproductmodule.js');
  //authentication routes
  router.post('/signup',signup)
 
@@ -35,6 +38,19 @@ router.post('/addproducttocart/:productId',verifyToken,addproducttocart);
 router.get('/viewcart',verifyToken,viewCart);
 // order routes
 router.post('/placeorder',verifyToken,placeorder);
+router.get('/vieworder/:orderId',verifyToken,vieworder);
+router.put('/cancelorder/:orderId',verifyToken,cancelorder);
+// profile management routes
+router.get('/getprofile',verifyToken,getprofile);
+router.put('/updateprofile',verifyToken,updateprofile);
+router.post('/updatepassword',verifyToken,updatepassword);
+router.delete('/deleteaccount',verifyToken,deleteaccount);
+// product routes user
+router.get('/getproductdetails/:productId',verifyToken,getproductdetails);
+
+
+
+
 
 
 

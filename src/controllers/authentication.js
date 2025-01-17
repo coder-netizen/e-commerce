@@ -10,9 +10,9 @@ const nodemailer = require('nodemailer');
 
 const signup = async (req,res) => {
     try {
-        const{name, password,email} = req.body
+        const{name, password,email,phone,address} = req.body
         //check if all fields are available
-        if(!name ||!password ||!email){
+        if(!name ||!password ||!email ||!phone ||!address){
            return res.status(400).json({
                 message:"all fields are required"
             });
@@ -30,7 +30,10 @@ const signup = async (req,res) => {
 
     const user =  new schema({name,
         password :hashedpassword,
-        email},
+        email,
+        phone,
+        address,
+    }
     );
     await user.save();
     res.status(201).send('user signed up successfully');

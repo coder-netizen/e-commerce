@@ -1,4 +1,4 @@
-const product = require('../models/productSchema');
+const product = require('../models/productSchema.js');
 const category = async(req,res)=>{
     try {
         //taking query from category

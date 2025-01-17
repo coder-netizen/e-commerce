@@ -1,5 +1,5 @@
 
-const productSchema = require('../models/productSchema');
+const productSchema = require('../models/productSchema.js');
 const userSchema = require('../models/userSchema');
 const verifyToken = require('../middlewares/jsonwebtoken');
 

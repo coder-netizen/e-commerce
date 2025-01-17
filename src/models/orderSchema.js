@@ -38,10 +38,19 @@ const orderSchema = new mongoose.Schema({
     },
     paymentMethod: {
         type: String,
-        enum: ['COD', 'online'],
+        enum: ['COD'],
         required: true,
     },
+    isCancelled: {
+        type:Boolean,
+        default:true,
+    },
+    cancelReason:{
+        type:String,
+        default:null,
+    }
    
 });
+
 
 module.exports = mongoose.model('orders', orderSchema);

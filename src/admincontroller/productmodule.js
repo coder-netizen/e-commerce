@@ -1,4 +1,4 @@
-const product = require('../models/productSchema');
+const product = require('../models/productSchema.js');
 const multer = require('multer');
 const path = require('path');
 const upload = require('../middlewares/multer');

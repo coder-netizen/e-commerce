@@ -9,6 +9,7 @@ const router = require('./routes/router.js');
 const productmodule = require('./src/admincontroller/productmodule');
 const wishlistmodule = require('./src/controllers/wishlistmodule');
 const cartmodule = require('./src/controllers/cartmodule.js');
+const userproductmodule = require('./src/controllers/userproductmodule.js');
 
 env.config();
 
